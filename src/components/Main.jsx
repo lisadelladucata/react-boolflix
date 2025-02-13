@@ -19,6 +19,23 @@ export default function Main() {
     return languagesFlags[language] || "US";
   };
 
+  const voteStars = (vote) => {
+    const stars = [];
+    const maxStars = 5;
+    const coloredStars = Math.round(vote / 2);
+
+    for (let i = 0; i < maxStars; i++) {
+      stars.push(
+        <i
+          className={` fa fa-star
+            ${i < coloredStars ? "colored" : "empty"}`}
+          key={i}
+        />
+      );
+    }
+    return stars;
+  };
+
   return (
     <>
       <main>
@@ -28,10 +45,16 @@ export default function Main() {
             <li key={movie.id}>
               <h3>{movie.title}</h3>
               <h4>{movie.original_title}</h4>
-              <div className="img">
+              <div className="poster">
+                <img
+                  src={` https://image.tmdb.org/t/p/w300${movie.poster_path} `}
+                  alt="poster"
+                />
+              </div>
+              <div className="language">
                 <Flag code={getFlags(movie.original_language)} />
               </div>
-              <p>{movie.vote_average}</p>
+              <div className="vote">{voteStars(movie.vote_average)}</div>
             </li>
           ))}
         </ul>
@@ -41,10 +64,17 @@ export default function Main() {
             <li key={tv.id}>
               <h3>{tv.name}</h3>
               <h4>{tv.original_name}</h4>
-              <div className="img">
+              <div className="poster">
+                <img
+                  src={` https://image.tmdb.org/t/p/w500${tv.poster_path} `}
+                  alt="poster"
+                />
+              </div>
+              <div className="language">
                 <Flag code={getFlags(tv.original_language)} />
               </div>
-              <p>{tv.vote_average}</p>
+              {voteStars(tv.vote_average)}
+              <div className="vote"></div>
             </li>
           ))}
         </ul>

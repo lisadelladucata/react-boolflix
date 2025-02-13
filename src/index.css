@@ -1,3 +1,11 @@
-.img {
+.language {
   width: 50px;
+}
+
+.colored {
+  color: gold;
+}
+
+.empty {
+  color: gray;
 }
