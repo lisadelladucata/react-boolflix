@@ -41,7 +41,9 @@ export default function SearchBar() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button type="submit">Cerca</button>
+        <button type="submit">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
       </form>
     </>
   );

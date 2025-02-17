@@ -40,44 +40,56 @@ export default function Main() {
     <>
       <main>
         <h2>Lista film</h2>
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>
-              <h3>{movie.title}</h3>
-              <h4>{movie.original_title}</h4>
-              <div className="poster">
-                <img
-                  src={` https://image.tmdb.org/t/p/w300${movie.poster_path} `}
-                  alt="poster"
-                />
-              </div>
-              <div className="language">
-                <Flag code={getFlags(movie.original_language)} />
-              </div>
-              <div className="vote">{voteStars(movie.vote_average)}</div>
-            </li>
-          ))}
-        </ul>
+        <div className="container">
+          <ul>
+            {movies.map((movie) => (
+              <li key={movie.id}>
+                <div className="title">
+                  <h3>{movie.title}</h3>
+                  <p>{movie.original_title}</p>
+                </div>
+                <div className="poster">
+                  <img
+                    src={` https://image.tmdb.org/t/p/w300${movie.poster_path} `}
+                    alt="poster"
+                  />
+                </div>
+                <div className="info">
+                  <div className="language">
+                    <Flag code={getFlags(movie.original_language)} />
+                  </div>
+                  <div className="vote">{voteStars(movie.vote_average)}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <h2>Lista serie</h2>
-        <ul>
-          {tvs.map((tv) => (
-            <li key={tv.id}>
-              <h3>{tv.name}</h3>
-              <h4>{tv.original_name}</h4>
-              <div className="poster">
-                <img
-                  src={` https://image.tmdb.org/t/p/w500${tv.poster_path} `}
-                  alt="poster"
-                />
-              </div>
-              <div className="language">
-                <Flag code={getFlags(tv.original_language)} />
-              </div>
-              {voteStars(tv.vote_average)}
-              <div className="vote"></div>
-            </li>
-          ))}
-        </ul>
+        <div className="container">
+          <ul>
+            {tvs.map((tv) => (
+              <li key={tv.id}>
+                <div className="title">
+                  <h3>{tv.name}</h3>
+                  <p>{tv.original_name}</p>
+                </div>
+                <div className="poster">
+                  <img
+                    src={` https://image.tmdb.org/t/p/w300${tv.poster_path} `}
+                    alt="poster"
+                  />
+                </div>
+                <div className="info">
+                  <div className="language">
+                    <Flag code={getFlags(tv.original_language)} />
+                  </div>
+                  <div className="vote">{voteStars(tv.vote_average)}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </main>
     </>
   );

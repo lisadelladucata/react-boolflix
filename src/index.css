@@ -1,3 +1,79 @@
+/***********
+RESET
+***********/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+/***********
+GENERAL
+***********/
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/***********
+HEADER
+***********/
+header {
+  background-color: #080808;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+header button {
+  background-color: transparent;
+  color: #fff;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+header input::placeholder {
+  color: #fff;
+  font-size: 16px;
+}
+
+header input {
+  background-color: transparent;
+}
+
+/***********
+MAIN
+***********/
+main {
+  background-color: #141414;
+  padding: 20px;
+}
+
+main h2 {
+  color: #fff;
+  text-align: center;
+}
+
+main ul {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main ul li {
+  flex-grow: 1;
+  max-width: calc(100% / 4);
+  list-style: none;
+}
+
+main .title {
+  color: #fff;
+  font-weight: bold;
+}
+
 .language {
   width: 50px;
 }

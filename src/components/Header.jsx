@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <h1>BOOLFLIX</h1>
+        <img src="../img/fontbolt.png" alt="" />
         <SearchBar />
       </header>
     </>
